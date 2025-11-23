@@ -2,62 +2,60 @@ import { FaBoreHole } from "react-icons/fa6";
 import { IoEarthOutline } from "react-icons/io5";
 import { Form } from "react-router";
 
-function Login (){
+function Login() {
+  return (
+    <Form className="bg-[#7bc743] min-h-screen pt-24 pb-10 px-4">
+      {/* Top Switch */}
+      <div className="flex justify-between max-w-xl mx-auto mb-6 text-white">
+        {/* Admin / Self Service */}
+        <div className="flex gap-3 text-base sm:text-lg font-medium">
+          <span className="border-b border-white pb-1 cursor-pointer">
+            Admin Login
+          </span>
+          <span className="opacity-80 cursor-pointer">Self Service</span>
+        </div>
 
+        {/* Icons */}
+        <div className="flex items-center gap-4 text-xl">
+          <FaBoreHole className="text-white" />
+          <IoEarthOutline className="text-white" />
+        </div>
+      </div>
 
-    return (
-        <>
-        <Form className=" bg-[#7bc743] min-h-screen my-8 pt-24">
+      {/* Login Form */}
+      <div className="max-w-xl mx-auto flex flex-col gap-5">
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full p-3 rounded-md bg-white border border-gray-300"
+        />
 
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full p-3 rounded-md bg-white border border-gray-300"
+        />
 
-            <div className="flex justify-between w-[40%] mx-auto my-4">
-               <div> 
-                <span className="text-white ">Admin Login</span>
-                <span className="px-4">|</span>
-                <span className="">Self Service</span>
-                </div>
-               <div className="flex justify-center items-center gap-4">
-                <FaBoreHole />
-                <IoEarthOutline />
-               </div>
- 
-            </div>
+        {/* Checkbox */}
+        <label className="flex items-start gap-2 text-sm text-white">
+          <input type="checkbox" className="mt-1" />
+          <span>
+            I agree to the{" "}
+            <span className="underline">
+              Personal Information Protection and Privacy Policy
+            </span>
+          </span>
+        </label>
 
-            <div className="w-[40%] mx-auto flex flex-col gap-6">
-             
-              
-                    <input type="email" className="bg-white border border-slate-800 lg:md:w-96" placeholder="Email" />
-              
-                    <input type="test" className="bg-white border border-slate-800 lg:md:w-96" placeholder="Password" />
-
-                    <div className="flex justify-center items-center">
-
-                        <input type="checkbox" name="" id="" />
-                        <p className="text-[12px]">I agree to the <span className="text-white">
-                            Personal Information Protection and Privacy Policy</span></p>
-                    </div>
-
-                    <input 
-                    type="submit" 
-                    value="Login" 
-                    className="bg-black text-white border border-slate-800 lg:md:w-96"
-                    />
-
-
-
-
-                   
-                    
-            </div>
-             
-        
-                
-        </Form>
-        
-        </>
-    )
-
+        {/* Submit Button */}
+        <input
+          type="submit"
+          value="Login"
+          className="w-full bg-black text-white p-3 rounded-md cursor-pointer font-semibold hover:bg-gray-900 transition"
+        />
+      </div>
+    </Form>
+  );
 }
-
 
 export default Login;
